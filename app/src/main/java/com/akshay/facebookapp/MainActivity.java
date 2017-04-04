@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
 
-                //goToNext();
+                textResult.setText("Successfully logged in.");
             }
 
             @Override
@@ -65,6 +65,11 @@ public class MainActivity extends AppCompatActivity {
        if(AccessToken.getCurrentAccessToken() != null){
 
            goToNext();
+
+       }
+       else
+       {
+           textResult.setText(" ");
 
        }
     }

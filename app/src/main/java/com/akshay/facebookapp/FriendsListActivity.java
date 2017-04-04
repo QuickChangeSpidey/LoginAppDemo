@@ -8,7 +8,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.akshay.facebookapp.Adapters.FriendsAdapter;
 import com.akshay.facebookapp.Model.Friends;
@@ -17,10 +16,6 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.HttpMethod;
 import com.facebook.login.LoginManager;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,9 +60,6 @@ public class FriendsListActivity extends AppCompatActivity {
                     }
                 }
         ).executeAsync();
-
-
-
     }
 
     @Override
