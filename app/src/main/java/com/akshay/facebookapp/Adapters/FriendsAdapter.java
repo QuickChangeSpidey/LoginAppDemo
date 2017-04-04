@@ -22,6 +22,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.MyViewHo
     private List<Friends> friendsList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
+
         public TextView name, dob, gender;
         public ImageView photo;
 

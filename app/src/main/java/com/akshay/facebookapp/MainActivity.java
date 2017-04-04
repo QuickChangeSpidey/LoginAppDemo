@@ -10,11 +10,9 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
-import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
-import Application.App;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -79,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void goToNext(){
 
-        Intent goNext = new Intent(MainActivity.this, LoggedInPage.class);
+        Intent goNext = new Intent(MainActivity.this, FriendsListActivity.class);
         startActivity(goNext);
 
     }

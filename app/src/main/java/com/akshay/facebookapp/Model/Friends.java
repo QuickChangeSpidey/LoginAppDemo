@@ -10,8 +10,6 @@ public class Friends {
     private String name, gender, dob;
 
     public Friends(){
-
-
     }
 
     public Image getPhoto() {
