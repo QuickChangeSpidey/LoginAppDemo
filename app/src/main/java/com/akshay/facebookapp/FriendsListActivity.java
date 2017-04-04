@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.akshay.facebookapp.Adapters.FriendsAdapter;
@@ -46,26 +47,27 @@ public class FriendsListActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        AccessToken accessToken = AccessToken.getCurrentAccessToken();
-        GraphRequest request = GraphRequest.newMeRequest(
-                accessToken,
-                new GraphRequest.GraphJSONObjectCallback() {
-                    @Override
-                    public void onCompleted(
-                            JSONObject object,
-                            GraphResponse response) {
 
-                        try {
-                            id = object.getString("id");
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+        //Retrieving user id
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        id = accessToken.getUserId();
+
+        //Calling api to get list of friends
+        //Change in api need to add user_friends permission to get list of friends
+        new GraphRequest(
+                AccessToken.getCurrentAccessToken(),
+                "/"+id+"/friends",
+                null,
+                HttpMethod.GET,
+                new GraphRequest.Callback() {
+                    public void onCompleted(GraphResponse response) {
+                        Log.d("Response", response.toString());
                     }
-                });
-//        Bundle parameters = new Bundle();
-//        parameters.putString("fields", "id,name,link");
-//        request.setParameters(parameters);
-        request.executeAsync();
+                }
+        ).executeAsync();
+
+
+
     }
 
     @Override
