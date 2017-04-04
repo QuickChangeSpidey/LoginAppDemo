@@ -11,10 +11,28 @@
     android:background="#3b5998"
     tools:context="com.akshay.facebookapp.MainActivity">
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/login_button"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="20dp"
+        android:src="@mipmap/robot"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:paddingTop="40dp"
+        android:layout_below="@+id/login_button"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/text_result"
+        android:textColor="@android:color/white"/>
 
     <com.facebook.login.widget.LoginButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/login_button"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="Facebook Login"/>
